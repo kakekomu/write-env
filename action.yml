@@ -12,7 +12,7 @@ inputs:
     description: 'Json string to write to env file'
     required: true
   regex:
-    description: 'Regex to filter out keys'
+    description: 'Regex to filter keys'
     required: false
 
 runs:
