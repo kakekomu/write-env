@@ -1,23 +1,19 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Write Env'
+description:
+  'Write env file from provided json. Can be used with github secrets or
+  variables'
+author: 'yoonsoo.kim@kakekomu.com'
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: 'heart'
-  color: 'red'
-
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  env:
+    description: 'Output env file path'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  json:
+    description: 'Json string to write to env file'
+    required: true
+  regex:
+    description: 'Regex to filter out keys'
+    required: false
 
 runs:
   using: node20

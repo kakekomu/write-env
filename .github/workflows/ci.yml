@@ -47,18 +47,31 @@ jobs:
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest
+    environment:
+      name: devtest
 
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Test Local Action
-        id: test-action
+      - name: Test generate secrets
+        id: test-action-secrets
         uses: ./
         with:
-          milliseconds: 2000
+          env: .env
+          json: ${{ toJson(secrets) }}
+          regex: 'SECRET_.*'
 
-      - name: Print Output
-        id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+      - name: Test print
+        run: cat .env
+
+      - name: Test generate vars
+        id: test-action-vars
+        uses: ./
+        with:
+          env: .env
+          json: ${{ toJson(vars) }}
+
+      - name: Test print 2
+        run: cat .env

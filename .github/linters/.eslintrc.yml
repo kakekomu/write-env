@@ -7,6 +7,10 @@ globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
 
+settings:
+  import/resolver:
+    node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] }
+
 ignorePatterns:
   - '!.*'
   - '**/node_modules/.*'
