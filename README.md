@@ -5,6 +5,7 @@ Simple tool for env file generation.
 You can create env file in workflow from JSON data.
 
 ### Use case
+
 Write env from Github Repository Secrets
 
 ```yml
@@ -26,7 +27,9 @@ Write env from Github Repository Variables
 ```
 
 ### Filter with regular expression
-If you don't want to write all properties, you can use regular expressions to  filter keys
+
+If you don't want to write all properties, you can use regular expressions to
+filter keys
 
 When you provide regex, only matched keys are used.
 
@@ -40,11 +43,10 @@ When you provide regex, only matched keys are used.
 ```
 
 ### Arguments
-Required properties are shown in bold
-| Name  | description | 
-| ----  |--- |
-| **env**  | Output env file path |
-| **json** | Json string to write to env file|
-| regex |  Regex to filter keys | 
 
-If an `env` file already exists, content will be appended to the existing file with `\n`
+Required properties are shown in bold | Name | description | | ---- |--- | |
+**env** | Output env file path | | **json** | Json string to write to env file|
+| regex | Regex to filter keys |
+
+If an `env` file already exists, content will be appended to the existing file
+with `\n`
